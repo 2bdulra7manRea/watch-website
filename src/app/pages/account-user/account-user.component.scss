@@ -1,0 +1,40 @@
+.sidebar{
+    width:70%;
+    background-color: rgb(255, 255, 255);
+    border-right:1px solid lightgrey;
+    min-height:1000px;
+
+>div{
+
+width:100%;
+padding:10px;
+margin:20px 0px;
+
+input{
+    padding:10px;
+    border:1px solid lightgrey;
+    outline: none;
+}
+
+button{
+    background-color: rgba(220, 20, 60, 0);
+    color: rgb(158, 8, 38);
+    border: none;
+    outline: none;
+    text-transform: capitalize;
+    &:hover{
+        color: red;
+    }
+}
+
+
+}
+
+
+}
+
+.boxcards{
+    display: flex;
+    justify-content: flex-start;
+    flex-flow: row wrap;
+}

@@ -1,1 +1,125 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$UNcommerce-primary: mat-palette($mat-indigo);
+$UNcommerce-accent: mat-palette($mat-pink, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$UNcommerce-warn: mat-palette($mat-red);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$UNcommerce-theme: mat-light-theme((
+  color: (
+    primary: $UNcommerce-primary,
+    accent: $UNcommerce-accent,
+    warn: $UNcommerce-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($UNcommerce-theme);
+
 /* You can add global styles to this file, and also import other style files */
+*{
+    box-sizing: border-box;
+    padding:0px;
+    margin:0px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+
+
+body{
+    background-color: white;
+}
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+[class*="col-"] {
+  float: left;
+  padding:1px;
+  min-height:300px;
+}
+
+
+
+/* For desktop: */
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  [class*="col-"] {
+    width: 100%;
+  }
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+.cover{
+  width:100%;
+  height:400px;
+  background-image: url('./assets/imgs/photo-1cover.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  object-fit: cover;
+}
+
+
+.center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.cover-title{
+  font-size:4rem;
+  color: rgb(11, 11, 68);
+}
+
+.m{
+  margin:120px 0px;
+
+}
+
+
+
+.pubbtn{
+  border: none;
+  outline: none;
+  padding:10px;
+  background-color: rgb(192, 55, 55);
+  color: white;
+}

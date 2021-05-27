@@ -1,0 +1,72 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12 cover center">
+            <h1 class="cover-title">Cart List</h1>
+        </div>
+    </div>
+
+<div class="row m">
+    <div class="col-12 center">
+        <table>
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th></th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of cartItems"  >
+                    <td class="img">
+                       <img src="../../../../assets/imgs/wa1.jpg" alt="photo">
+                    </td>
+                    <td>
+                        {{item.Product.name}}
+                    </td>
+                    <td>
+                        {{ item.Product.price| currency:'USD'}}
+                    </td>
+                    <td class="adding">
+                        <h1>{{item.Quantity}}</h1>
+                        <button (click)="AddQuntity(item)">+</button>
+                        <button (click)="DeleteQuntity(item)" >-</button>
+                    </td>
+                    <td>{{item.priceOfProducts| currency:'USD'}}</td>
+                    <td><button >Delete</button></td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-5 center">
+        <button class="pubbtn"(click)="addItem()">Update Cart</button>
+    </div>
+    <div class="col-5 center">
+        <button class="pubbtn" (click)="getDetails()">Close Coupon</button>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12 center">
+        <div class="details-cart" *ngIf="showDetails">
+            <h6>Cart Details</h6>
+            <ul  >
+                <li *ngFor="let item of details.item" >{{item}}</li>
+            </ul>
+            <p>total:<span>{{details.total | currency:'USD' }}</span> </p>
+            <p>Address:<span>{{details.country}}</span></p>
+            <p>date delivery:<span>{{details.time}}</span> </p>
+        </div>
+    </div>
+</div>
+
+<div class="snap" *ngIf="showSnapDiv">
+    <p>{{message}}</p>
+</div>
+</div>

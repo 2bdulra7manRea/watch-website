@@ -1,0 +1,15 @@
+<div class="card-watch">
+    <div class="watch-img">
+        <img src="../../../assets/imgs/popular3.png" alt="watch">
+        <span class="heart">
+            <fa-icon [icon]='Fheart'></fa-icon>
+        </span>
+        <div class="add-cart">
+            <button (click)="AddToCart()" >Add to cart</button>
+        </div>
+    </div>
+    <div class="watch-body">
+        <a [routerLink]="['/details',watch.id?watch.id:'']">{{watch.name}}</a>
+        <h3>{{watch.price| currency:'USD' }}</h3>
+    </div>
+    </div>

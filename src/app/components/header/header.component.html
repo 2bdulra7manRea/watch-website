@@ -1,0 +1,63 @@
+<div class="header-nav">
+    <div class="title">
+        <h1>Time<span>Zone</span></h1>
+    </div>
+    <ul class="menu display ">
+        <li><a routerLink='/home'>Home</a></li>
+        <li><a routerLink='/products/list'>Shop</a></li>
+        <li><a routerLink='/products/list'>Blog</a></li>
+        <li><a routerLink='/products/list'>About</a></li>
+        <li><a routerLink='/products/list'>Contact</a></li>
+        </ul>
+        
+        <ul class="toolIcon display">
+            <li class="">
+            <button (click)="Dosearch()">
+            <fa-icon [icon]='Fsearch'></fa-icon>
+            </button>
+             </li>
+        <li><a routerLink='/login'>
+           <fa-icon [icon]='Fuser'></fa-icon>
+        </a></li>
+        <li class="dropmenu" >
+            <span *ngIf="numberOfCarts!==0"   class="numberOfCarts">{{numberOfCarts}}</span>
+            <fa-icon  (click)="dropdown()" [icon]='shoppingcart'></fa-icon>
+        <div class="submenu" [ngClass]="{'open':flagdrop}">
+            <div  *ngFor="let item of cartsItems" class="item">
+            <img class="img-item">
+            <a routerLink='product/cart' class="name-item">{{item.Product.name}}</a>
+            <p class="price-item">{{item.Product.price| currency:'USD'}}</p>
+            </div>
+            <div class="body">
+                <h1>Total:{{ totalPrice | currency:'USD'}}</h1>
+            </div>
+        </div>
+    </li>
+    </ul>
+      
+<ul class="mobileMenu" >
+    <li>
+       <span><fa-icon [icon]='Fabars' (click)="showMenu()" ></fa-icon></span> 
+        <div class="mainMenu"  [ngClass]="{'openMenu':menu}">
+            <ul>
+                <li><a routerLink='/home'>Home</a></li>
+                <li><a routerLink='/products/list'>Shop</a></li>
+                <li><a routerLink='/products/list'>Blog</a></li>
+                <li><a routerLink='/products/list'>About</a></li>
+                <li><a routerLink='/products/list'>Contact</a></li>
+            </ul>
+        </div>
+    </li>
+</ul>    
+
+
+
+
+</div>
+<div *ngIf="flag===true">
+    <div class="searching center">
+        <button (click)="CLOSE()" >X</button>
+        <button (click)="FindResultSearch()">Search</button>
+        <input type="search" [(ngModel)]="search"  name="searching"  placeholder="Searching key...">
+    </div>
+</div>

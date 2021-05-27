@@ -1,0 +1,75 @@
+<div class="container">
+    <div class="first-section row">
+
+
+
+        <div class="col-8 center">
+            <div class="box-one">
+              <h1>Select Your New Perfect Style</h1>  
+              <p>Getting discount with a very splanned materail of design </p>
+                <h6>{{Time}}</h6>
+                <div class="timing">
+                    <span>hours: {{hour}}</span>
+                    <span>minutes: {{minuts}}</span>
+                    <span>second: {{second}}</span>
+                </div>
+
+              <button class="btn w20">
+                  
+                 <div class="oveing"></div>
+                 <h3>Shop now</h3>
+                </button>
+            </div>
+            
+
+        </div>
+
+
+        <div class="col-4">
+            <img src="../../../../assets/imgs/watch.png" alt="watch">
+        </div>
+    </div>
+
+
+
+
+
+
+    <div class="row title-box center m">
+        <h1>Popular Items</h1>
+    </div>
+
+    <div class="second-section row m">
+        <div class="col-12 center ">
+            <div class="box-cards">
+<app-product-item  *ngFor="let item of watches"  [watch]='item' ></app-product-item>
+           </div>
+        </div>
+
+    </div>
+
+    <div class="third-section row m">
+        <div class="col-6">
+            <img height="100%"  src='../../../../assets/imgs/wa1.jpg'>
+            <div class="overlay"></div>
+        </div>
+        <div class="col-3">
+            <img height="100%"  src='../../../../assets/imgs/wa2.jpg'>
+            <div class="overlay"></div>
+        </div>
+        <div class="col-3">
+            <img height="50%"  src="../../../../assets/imgs/wa3.jpg">
+            <img height="50%"  src="../../../../assets/imgs/wa4.jpg">
+            <div class="overlay"></div>
+        </div>
+    </div>
+
+
+    <div class="row title-box center m">
+            <button class="btn w30">
+            <div class="oveing"></div>
+            <h3>View More Products</h3>
+            </button>
+    </div>
+
+</div>

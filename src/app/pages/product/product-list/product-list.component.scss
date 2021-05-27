@@ -1,0 +1,28 @@
+.flexing{
+    display:flex;
+    justify-content:center;
+    flex-flow: row wrap;
+    width:90%;
+    min-width:800px;
+}
+
+.filtring{
+    width:100%;
+    padding:40px;
+    button{
+        padding:10px 20px;
+        border:none;
+        background-color: white;
+        margin:20px;
+        font-size:1.3rem;
+        color: rgb(49, 49, 49);
+        border-bottom:2px groove white;
+        
+    }    
+}
+
+.filtring .Border{
+   border-bottom:2px groove red;
+
+}
+

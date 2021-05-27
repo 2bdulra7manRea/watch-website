@@ -1,0 +1,21 @@
+
+
+.h{
+    height:500px;
+}
+
+
+.form-group{
+    width:80%;
+    display: flex;
+    flex-flow: column wrap;
+    padding:30px;
+    &>input , button{
+        padding:10px;
+        border:1px solid rgb(192, 192, 192);
+        outline: none;
+        margin:20px 0px;
+        width:100%;
+    }
+}
+

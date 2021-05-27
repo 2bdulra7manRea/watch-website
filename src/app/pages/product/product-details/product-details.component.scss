@@ -1,0 +1,15 @@
+.description{
+    text-align: center;
+    color: rgb(35, 51, 82);
+    width:60%;
+    line-height:40px;
+}
+.watch-photo{
+    height:500px;
+    width:70%;
+    img{
+        width:100%;
+        object-fit: cover;
+        height:100%;
+    }
+}

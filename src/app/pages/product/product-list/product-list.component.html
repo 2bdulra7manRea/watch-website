@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12 cover center">
+            <h1 class="cover-title">Watches List</h1>
+        </div>
+    </div>
+
+<div class="row">
+    <div class="col-8 center">
+        <div class="filtring">
+        <button (click)='DisplayFilter(1)' [ngClass]="{'Border':currentItems===1}" >New Arravels</button>
+        <button (click)='DisplayFilter(2)'  [ngClass]="{'Border':currentItems===2}" >High to Low</button>
+        <button (click)='DisplayFilter(3)'   [ngClass]="{'Border':currentItems===3}">Most Popular</button>
+        </div>
+    </div>
+    <div class="col-4">
+        
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-12 center">
+        <div class="flexing">
+        <app-product-item *ngFor="let item of watches" [watch]='item' ></app-product-item>
+
+         </div>
+    </div>
+</div>
+
+
+
+<div class="row">
+    <div class="col-12 center">
+        <mat-paginator [length]="100"
+              [pageSize]="10"
+              [pageSizeOptions]="[5, 10, 25, 100]">
+            </mat-paginator>
+
+    </div>
+</div>
+
+</div>
