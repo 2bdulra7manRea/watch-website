@@ -76,11 +76,13 @@ to{
 width:100%;
 }
 
-.btn h3{
+.btn a{
     position: absolute;
     z-index:4;
     left:30%;
     top:20%;
+    text-decoration: none;
+    color: white;
 }
 
 .first-section h1{

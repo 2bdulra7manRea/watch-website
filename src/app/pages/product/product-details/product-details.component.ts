@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ActivatedRouteSnapshot } from '@angular/router';
 import { Store } from '@ngrx/store';
+import { cartItemModel } from 'src/app/core/models/cart.item.model';
 import { WATCH } from 'src/app/core/models/watch.model';
-import { selectorWatches } from 'src/app/core/service/selectors/select.watches';
+import { selectCarts, selectorWatches } from 'src/app/core/service/selectors/select.watches';
+import { AddToCart, UpdateInCart } from 'src/app/core/service/_actions/watches.actions';
 
 @Component({
   selector: 'app-product-details',
@@ -46,5 +48,53 @@ this.loading=true
 
 }
 
+addToCart(){
+  this.store.select(selectCarts).subscribe((v)=>{
+    const CheckForAdding=v.some((v)=>{
+      return v.Product.id===this.watchDetails.id
+    })
+    if(!CheckForAdding){
+      const WatchCart:cartItemModel={
+        Product:this.watchDetails,
+        Quantity:1,
+        priceOfProducts:this.watchDetails.price
+      }
+      this.store.dispatch(new AddToCart(WatchCart))
+    }
+
+  })
+}
+
+removeItem(){
+  this.store.select(selectCarts).subscribe((carts) => {
+    carts.filter((value) => {
+      if (value.Product.id === this.watchDetails.id) {
+        const updated: cartItemModel = {
+          ...this.watchDetails,
+          Quantity: value.Quantity-1,
+          priceOfProducts: value.Product.price * (value.Quantity - 1)
+        }
+        this.store.dispatch(new UpdateInCart(updated))
+      }
+    })
+  })
+}
+
+
+
+addItem(){
+  this.store.select(selectCarts).subscribe((carts) => {
+    carts.filter((value) => {
+      if (value.Product.id === this.watchDetails['id']) {
+        const updated: cartItemModel = {
+          ...this.watchDetails,
+          Quantity: value.Quantity + 1,
+          priceOfProducts: value.Product.price * (value.Quantity + 1)
+        }
+        this.store.dispatch(new UpdateInCart(updated))
+      }
+    })
+  })
+}
 
 }

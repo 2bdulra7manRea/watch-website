@@ -101,11 +101,9 @@ switch (action.type) {
 
     case cartActionsType.updateCart:
     const beforeUpdate:any=[];
+    console.log(state.CartWatches)
     state.CartWatches.forEach((val)=>{
-        console.log(action.Payload)
-        console.log(val.Product.id)
-        console.log(action.Payload.Product.id)
-        if(val.Product.id===action.Payload.Product.id){
+        if(val.Product['id']===action.Payload.Product['id']){
             beforeUpdate.push(action.Payload)
         }else{
             beforeUpdate.push(val)

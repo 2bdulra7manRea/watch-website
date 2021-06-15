@@ -1,50 +1,45 @@
-.Up{
-    display:none;
-    background-color: crimson;
-    color: white;
-    padding:10px;
-    border-radius:100%;
-    text-align: center;
-    position:fixed;
-    z-index:10;
-    right:100px;
-    bottom:60px;
-    animation: moveUp;
-    animation-duration:2s;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-    fa-icon{
-        padding:10px;
-        font-size:2rem;
-    }
+.Up {
+  display: none;
+  background-color: crimson;
+  color: white;
+  padding: 10px;
+  border-radius: 100%;
+  text-align: center;
+  position: fixed;
+  z-index: 10;
+  right: 100px;
+  bottom: 60px;
+  animation: moveUp;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  fa-icon {
+    padding: 10px;
+    font-size: 2rem;
+  }
 }
-.ShowUp{
-    display: block;
+.ShowUp {
+  display: block;
 }
 
-
-
-@keyframes moveUp{
-
-0%{
+@keyframes moveUp {
+  0% {
     transform: translateY(0px);
-    
-}
+  }
 
-50%{
+  50% {
     transform: translateY(6px);
     background-color: red;
+  }
+
+  80% {
+    transform: translateY(9px);
+    background-color: white;
+    color: red;
+  }
 }
 
- 80%{
-
-transform: translateY(9px);
-background-color: white;
-color: red;
- }   
-}
-
-.snap{
-    background-color: black;
+.snap {
+  background-color: black;
 }

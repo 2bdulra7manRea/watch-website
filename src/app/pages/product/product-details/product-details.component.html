@@ -1,48 +1,39 @@
 <ng-container *ngIf="loading; else elseTemplate">
-<div class="container">
+  <div class="container">
     <div class="row">
-        <div class="col-12 cover center">
-            <h1 class="cover-title">Watch Shop</h1>
-        </div>
+      <div class="col-12 cover center">
+        <h1 class="cover-title">Watch Shop</h1>
+      </div>
     </div>
 
+    <div class="row m">
+      <div class="col-6 center">
+        <div class="watch-photo">
+          <img src="../../../../assets/imgs/wa4.jpg" />
+        </div>
+      </div>
 
-    <div class="row m">
-        <div class="col-12 center">
-            <div class='watch-photo'>
-            <img src="../../../../assets/imgs/wa4.jpg">
-            </div>
+      <div class="col-6">
+        <div class="description">
+          <h1>{{ watchDetails.name }}</h1>
+          <p>{{ watchDetails.description }}</p>
         </div>
-    </div>
-    <div class="row m">
-        <div class="col-12 center">
-            <div class="description">
-                <h1>{{watchDetails.name}}</h1>
-                <p>{{watchDetails.description}}</p>
-            </div>
-        </div>
-    </div>
-    <div class="row m">
-        <div class="col-12 center">
-            <div class="qaulity">
-                <div>
+
+        <div class="qaulity">
+          <div>
             <span>Qaulity</span>
-            <button mat-stroked-button color="accent">-</button>
-            <span>1</span>
-            <button mat-stroked-button color="accent">+</button>
-            <span>{{watchDetails.price| currency:'USD' }}</span>
-            </div>
-            <button class="pubbtn">Add to cart</button>
-            </div>
+          <button mat-stroked-button (click)="removeItem()" color="accent">-</button>
+          <span>1</span>
+          <button mat-stroked-button (click)="addItem()" color="accent">+</button>
+          <span>{{ watchDetails.price | currency: "USD" }}</span> 
+          </div>
+          <button class="pubbtn" (click)="addToCart()" >Add to cart</button>
         </div>
+      </div>
     </div>
-
-
-</div> 
+  </div>
 </ng-container>
 
-
-
 <ng-template #elseTemplate>
-    <h1>Loading.......</h1>
+  <h1>Loading.......</h1>
 </ng-template>
